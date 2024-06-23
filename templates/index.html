@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="title">
+        <h3 class="title-text"> Tic Tac Toe - infinity </h3>
+    </div>
+
+    <!-- input areas for: create lobby and join lobby -->
+    <div class="input-area">
+        <!-- Create lobby -->
+        <div id="input-area-create" style="display: none;">
+            <h2> Создание лобби </h2>
+            <p id="input-area-create-msg-error"></p>
+            <div class="input-area-create-item">
+                <label for="create-lobby-name"> Название лобби </label><input id="create-lobby-name">
+            </div>
+            <div class="input-area-create-item">
+                <label for="create-username"> Имя пользователя </label><input id="create-username">
+            </div>
+            <div class="input-area-create-buttons">
+                <button id="input-area-create-btn-cancel"> Cancel </button>
+                <button id="input-area-create-btn"> Create </button>
+            </div>
+        </div>
+        <!-- Join lobby -->
+        <div id="input-area-join" style="display: none;">
+            <h2> Присоединение к лобби  </h2>
+            <p id="input-area-join-msg-error"></p>
+            <div class="input-area-join-item">
+                <label for="join-username"> Имя пользователя </label><input id="join-username">
+            </div>
+            <div class="input-area-join-buttons">
+                <button id="input-area-join-btn-cancel"> Cancel </button>
+                <button id="input-area-join-btn-goto"> Go To </button>
+            </div>
+        </div>
+    </div>
+    <!-- show lobby's -->
+    <div class="show-content">
+        <div class="show-lobbies">
+            <!-- Button add lobbies -->
+            <div style="display: flex; flex-direction: row; justify-content: flex-end;margin-right: 1rem;margin-top: 1rem;">
+                <div id="input-add-lobby">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icons">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
+                    </svg>
+                </div>
+            </div>
+            <!-- Container for lobbies -->
+            <div id="container-lobbies">
+                <!-- example lobby -->
+                <div class="lobby-container">
+                    <p class="lobby-container-name"> Room - 1 </p>
+                    <div class="lobby-container-actions">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icons">
+                            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-icons btn-join-lobby">
+                            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
